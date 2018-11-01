@@ -8,10 +8,15 @@ RUN apt-get install opennebula opennebula-sunstone opennebula-gate opennebula-fl
 
 
 
-RUN apt-get install iputils-ping -y
+RUN apt-get install iputils-ping less -y
 
 COPY .ssh/ /var/lib/one/.ssh/
 RUN chmod 600 /var/lib/one/.ssh/*
 RUN chown -R oneadmin:oneadmin /var/lib/one/.ssh/
 
-RUN service opennebula restart
+RUN apt-get install ruby-dev make
+RUN gem install sunstone
+
+
+#RUN service opennebula start
+#RUN service opennebula-sunstone start
