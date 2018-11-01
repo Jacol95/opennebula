@@ -1,0 +1,14 @@
+/**/.classpath
+/**/.settings
+/**/.project
+/**/*.jar
+/**/bin/**
+/lxclogs/**
+
+/.git/
+/.vagrant/
+/*.jar/
+/*~
+/**/*~
+
+/target/
