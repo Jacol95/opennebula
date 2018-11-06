@@ -5,10 +5,7 @@ services:
     tty: true
     ports:
      - "5001:22"
-     - "2633:2633"
      - "9869:9869"
-     - "2474:2474"
-     - "29876:29876"
   worker-node:
     build: worker/
     tty: true

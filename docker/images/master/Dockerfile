@@ -17,6 +17,8 @@ RUN chown -R oneadmin:oneadmin /var/lib/one/.ssh/
 RUN apt-get install ruby-dev make
 RUN gem install sunstone
 
+RUN apt-get install vim -y
+COPY sunstone-server.conf /etc/one/
 
 #RUN service opennebula start
 #RUN service opennebula-sunstone start

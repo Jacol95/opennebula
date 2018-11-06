@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<tomcat-users>
-  <user username="optilion" password="aL3jB2tS1" roles="manager-gui,manager,manager-script"/>
-</tomcat-users>
