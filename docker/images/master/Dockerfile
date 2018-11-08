@@ -14,11 +14,16 @@ COPY .ssh/ /var/lib/one/.ssh/
 RUN chmod 600 /var/lib/one/.ssh/*
 RUN chown -R oneadmin:oneadmin /var/lib/one/.ssh/
 
+
 RUN apt-get install ruby-dev make
 RUN gem install sunstone
 
 RUN apt-get install vim -y
 COPY sunstone-server.conf /etc/one/
 
+RUN apt-get update && apt-get install openssh-server -y
+RUN mkdir /var/run/sshd
+
 #RUN service opennebula start
 #RUN service opennebula-sunstone start
+CMD /usr/sbin/sshd -D && /bin/bash
