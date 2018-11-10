@@ -24,6 +24,8 @@ COPY sunstone-server.conf /etc/one/
 RUN apt-get update && apt-get install openssh-server -y
 RUN mkdir /var/run/sshd
 
-#RUN service opennebula start
-#RUN service opennebula-sunstone start
+RUN apt-get install net-tools
+
 CMD /usr/sbin/sshd -D && /bin/bash
+
+#apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils

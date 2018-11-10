@@ -22,4 +22,9 @@ COPY .ssh/ /var/lib/one/.ssh/
 RUN chmod 600 /var/lib/one/.ssh/*
 RUN chown -R oneadmin:oneadmin /var/lib/one/.ssh/
 
+
+RUN apt-get update &&  apt-get install nfs-common bridge-utils -y
+
+RUN apt-get update && apt-get install less vim net-tools -y
+
 CMD /usr/sbin/sshd -D && /bin/bash
