@@ -7,10 +7,8 @@ services:
     ports:
      - "9869:9869"
   worker-node-1:
-    container_name: worker_node_1
     build: worker/
     tty: true
   worker-node-2:
-    container_name: worker_node_2
     build: worker/
     tty: true

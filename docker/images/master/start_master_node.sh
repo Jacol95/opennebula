@@ -4,7 +4,7 @@
 /usr/sbin/sshd -D &
 
 # opennebula daemon
-/etc/init.d/opennebula start
+one start
 
 # opennebula web application
-/etc/init.d/opennebula-sunstone start
+sunstone-server start

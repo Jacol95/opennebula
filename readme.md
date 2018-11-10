@@ -23,9 +23,9 @@ User and password are stored in file `/var/lib/one/.one/one_auth`
 2. Login to user oneadmin `su - oneadmin`
 3. Add worker nodes to the cluster
 
-`onehost create worker_node_1 -i kvm -v kvm -n dummy`
+`onehost create images_worker-node-1_1 -i kvm -v kvm`
 
-`onehost create worker_node_2 -i kvm -v kvm -n dummy`
+`onehost create images_worker-node-2_1 -i kvm -v kvm`
 
 1. You should have up and running cluster. You can verify it by
 
