@@ -26,6 +26,7 @@ RUN mkdir /var/run/sshd
 
 RUN apt-get install net-tools
 
-CMD /usr/sbin/sshd -D && /bin/bash
 
-#apt-get install qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils
+COPY start_master_node.sh /usr/local/bin/
+
+CMD start_master_node.sh && /bin/bash

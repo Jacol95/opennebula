@@ -27,4 +27,6 @@ RUN apt-get update &&  apt-get install nfs-common bridge-utils -y
 
 RUN apt-get update && apt-get install less vim net-tools -y
 
-CMD /usr/sbin/sshd -D && /bin/bash
+COPY start_worker_node.sh /usr/local/bin/
+
+CMD start_worker_node.sh && /bin/bash

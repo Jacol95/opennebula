@@ -12,28 +12,7 @@ Dockerfiles that contains opennebula master and worker nodes
 1. Run bash command: `docker-compose up -d`
 2. Verify that images are running by `docker ps`
 
-
-### Starting opennebula services
-
-##### Worker node:
-1. Login to worker nodes by
-
-`docker exec -it worker_node_1 /bin/bash`
-
-`docker exec -it worker_node_2 /bin/bash`
-
-`...`
-
-2. Start libvirt-bin service
-
-`/etc/init.d/libvirt-bin start`
-
-##### Master node:
-1. Login to master node by 
-`docker exec -it master_node /bin/bash`
-2. Run: `/etc/init.d/opennebula start` to start opennebula daemon
-3. Run: `/etc/init.d/opennebula-sunstone` to start opennebula web service
-
+Openebula services should be started
 When they are started you can go to `http://localhost:9869/` to login to opennebula web
 User and password are stored in file `/var/lib/one/.one/one_auth`
 
