@@ -15,9 +15,45 @@ Dockerfiles that contains opennebula master and worker nodes
 
 ### Starting opennebula services
 
-1. Login to master node by `docker exec -it images_master-node_1 /bin/bash` (if docker image name = images_master-node_1)
+##### Worker node:
+1. Login to worker nodes by
+
+`docker exec -it worker_node_1 /bin/bash`
+
+`docker exec -it worker_node_2 /bin/bash`
+
+`...`
+
+2. Start libvirt-bin service
+
+`/etc/init.d/libvirt-bin start`
+
+##### Master node:
+1. Login to master node by 
+`docker exec -it master_node /bin/bash`
 2. Run: `/etc/init.d/opennebula start` to start opennebula daemon
 3. Run: `/etc/init.d/opennebula-sunstone` to start opennebula web service
 
 When they are started you can go to `http://localhost:9869/` to login to opennebula web
 User and password are stored in file `/var/lib/one/.one/one_auth`
+
+
+### Adding worker nodes to the cluster
+
+1. Login to master node
+2. Login to user oneadmin `su - oneadmin`
+3. Add worker nodes to the cluster
+
+`onehost create worker_node_1 -i kvm -v kvm -n dummy`
+
+`onehost create worker_node_2 -i kvm -v kvm -n dummy`
+
+1. You should have up and running cluster. You can verify it by
+
+`onehost list`
+
+or 
+
+`onehost show 0`  to see worker_node_1 parameters or
+
+`onehost show 1`  to see worker_node_2 parameters
