@@ -17,7 +17,7 @@ Dockerfiles that contains opennebula master and worker nodes
 
 1. Login to master node by `docker exec -it images_master-node_1 /bin/bash` (if docker image name = images_master-node_1)
 2. Run: `/etc/init.d/opennebula start` to start opennebula daemon
-3. Run: `/etc/init.d/opennebula-sunstone` to start opennebula web service
+3. Run: `/etc/init.d/opennebula-sunstone start` to start opennebula web service
 
 When they are started you can go to `http://localhost:9869/` to login to opennebula web
 User and password are stored in file `/var/lib/one/.one/one_auth`
